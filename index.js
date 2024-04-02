@@ -9,7 +9,7 @@ function start() {
     content +=
       '<div class="barBox"><div class="bar" id="' +
       element +
-      '"></div><p>' +
+      '"></div><p class="day">' +
       week[i] +
       "</p></div>";
   }
