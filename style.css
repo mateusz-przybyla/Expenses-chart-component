@@ -30,46 +30,83 @@ main {
   margin: 0 15px 15px 15px;
   border: 0;
   border-radius: 10px;
-  padding: 10px 10px 10px 10px;
+  padding: 20px 5% 20px 5%;
 }
 
 .container2 {
-  background-color: white;
-  margin: 0 15px 0 15px;
+  background-color: hsl(0, 100%, 100%);
+  margin: 0 15px 15px 15px;
   border: 0;
   border-radius: 10px;
+  padding: 23px 5% 25px 5%;
 }
 
-p {
+.text {
   color: hsl(246, 10%, 61%);
-  font-size: 12px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/*MY BALANCE*/
+
+.part1 {
+  text-align: left;
+  color: hsl(0, 100%, 100%);
+  padding-bottom: 7px;
+}
+
+.part3 {
+  font-weight: 700;
+  color: hsl(0, 0%, 0%);
+}
+
+.balance1 {
+  text-align: left;
+  font-size: 24px;
+  font-weight: 600;
+  color: hsl(0, 100%, 100%);
+}
+
+img {
+  width: 80%;
 }
 
 /*CHART*/
 
 .header1 {
   text-align: left;
+  font-size: 16px;
 }
 
 .chartBox {
   display: flex;
   justify-content: space-between;
-  margin: 0 3.75% 0 3.75%;
+  margin-top: 55px;
 }
 
 .barBox {
-  width: 100%;
-  margin: 0 2% 0 2%;
+  min-width: 11%;
 }
 
 .bar {
   background-color: hsl(10, 79%, 65%);
 
   width: 100%;
-  height: 100px;
+  height: 150px;
   border: 0;
   border-radius: 5px;
+}
+
+.day {
+  color: hsl(246, 10%, 61%);
+  font-size: 12px;
+  font-weight: 500;
+  padding-top: 10px;
+}
+
+hr {
+  border: 1px solid hsl(240, 21%, 93%);
+  margin: 25px 0 25px 0;
 }
 
 /*SUMMARY*/
@@ -81,12 +118,22 @@ p {
 
 .totalPrice {
   text-align: left;
-  margin-left: 5%;
+}
+
+.balance2 {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.part2 {
+  padding-bottom: 5px;
 }
 
 .difference {
   text-align: right;
-  margin-right: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
 }
 
 /*FOOTER*/
@@ -94,6 +141,7 @@ p {
 .attribution {
   font-size: 11px;
   text-align: center;
+  margin: 0 15px 0 15px;
 }
 
 .attribution a {
@@ -103,15 +151,51 @@ p {
 /*MEDIA QUERIES*/
 
 @media (min-width: 450px) {
-  p {
-    font-size: 14px;
+  .container1 {
+    padding: 27px 7% 27px 7%;
+    border-radius: 20px;
+  }
+
+  .container2 {
+    padding: 30px 7% 30px 7%;
+    border-radius: 20px;
+    margin-top: 25px;
+  }
+
+  .text {
+    font-size: 18px;
+  }
+
+  .balance1 {
+    font-size: 30px;
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .header1 {
+    font-size: 22px;
   }
 
   .chartBox {
-    margin: 0 5.5% 0 5.5%;
+    margin-top: 66px;
   }
 
-  .barBox {
-    margin: 0 1.8% 0 1.8%;
+  .day {
+    font-size: 14px;
+  }
+
+  hr {
+    margin: 32px 0 32px 0;
+  }
+
+  .part2 {
+    padding-bottom: 0;
+  }
+
+  .balance2 {
+    font-size: 48px;
+    padding-bottom: 10px;
   }
 }
