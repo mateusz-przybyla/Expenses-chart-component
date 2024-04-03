@@ -14,6 +14,7 @@ function createBars(chartData) {
   for (var i = 0; i < chartData.length; i++) {
     content +=
       '<div class="barBox"><div class="bar" data-amount=' +
+      "$" +
       chartData[i].amount +
       ' style="height: ' +
       Math.ceil(chartData[i].amount * 2.85) +
