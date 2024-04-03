@@ -3,7 +3,11 @@ async function fetchChartData(url) {
   const chartData = await chartFetch.json();
 
   createBars(chartData);
+  calculateCurrentMonthBalance(chartData);
+  calculateTheHighestValue(chartData);
 }
+
+fetchChartData("./data.json");
 
 function createBars(chartData) {
   var content = "";
@@ -20,4 +24,28 @@ function createBars(chartData) {
   document.querySelector(".chartBox").innerHTML = content;
 }
 
-fetchChartData("./data.json");
+function calculateCurrentMonthBalance(chartData) {
+  var sum = 250.39;
+
+  for (var i = 0; i < chartData.length; i++) {
+    sum += chartData[i].amount;
+  }
+
+  sum = Math.round(sum * 100) / 100;
+
+  document.querySelector(".balance2").innerHTML = "$" + sum;
+}
+
+function calculateTheHighestValue(chartData) {
+  var max = chartData[0].amount;
+  var position = 0;
+
+  for (var i = 0; i < chartData.length - 1; i++) {
+    if (chartData[i + 1].amount > max) {
+      max = chartData[i + 1].amount;
+      position = i + 1;
+    }
+  }
+
+  document.getElementsByClassName("bar")[position].classList.add("barMax");
+}
