@@ -1,20 +1,23 @@
-var week = ["mon", "tue", "wen", "thu", "fri", "sat", "sun"];
+async function fetchChartData(url) {
+  const chartFetch = await fetch(url);
+  const chartData = await chartFetch.json();
 
-function start() {
+  createBars(chartData);
+}
+
+function createBars(chartData) {
   var content = "";
 
-  for (var i = 0; i < 7; i++) {
-    var element = "day" + i;
-
+  for (var i = 0; i < chartData.length; i++) {
     content +=
-      '<div class="barBox"><div class="bar" id="' +
-      element +
-      '"></div><p class="day">' +
-      week[i] +
+      '<div class="barBox"><div class="bar" style="height: ' +
+      Math.ceil(chartData[i].amount * 2.85) +
+      'px;"></div><p class="day">' +
+      chartData[i].day +
       "</p></div>";
   }
 
   document.querySelector(".chartBox").innerHTML = content;
 }
 
-start();
+fetchChartData("./data.json");
