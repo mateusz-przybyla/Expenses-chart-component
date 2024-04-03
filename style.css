@@ -86,7 +86,7 @@ img {
 }
 
 .barBox {
-  min-width: 11%;
+  width: 11%;
   display: flex;
   flex-direction: column;
   justify-content: end;
@@ -97,10 +97,21 @@ img {
   width: 100%;
   border: 0;
   border-radius: 5px;
+  position: relative;
 }
 
 .bar:hover::before {
   content: attr(data-amount);
+  font-size: 12px;
+  font-weight: 700;
+  color: hsl(0, 100%, 100%);
+  background-color: hsl(25, 47%, 15%);
+  padding: 20% 4px 20% 4px;
+  border-radius: 5px;
+  position: absolute;
+  top: -45px;
+  margin-left: -22.5px;
+  transform: rotate(-90deg);
 }
 
 .bar:hover {
@@ -202,6 +213,14 @@ hr {
     margin-top: 66px;
   }
 
+  .bar:hover::before {
+    font-size: 16px;
+    padding: 10px 20% 10px 20%;
+    top: -50px;
+    margin-left: -33px;
+    transform: rotate(0deg);
+  }
+
   .day {
     font-size: 14px;
   }
@@ -217,5 +236,9 @@ hr {
   .balance2 {
     font-size: 48px;
     padding-bottom: 10px;
+  }
+
+  .difference {
+    justify-content: center;
   }
 }
