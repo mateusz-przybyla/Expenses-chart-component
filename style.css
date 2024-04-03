@@ -42,7 +42,7 @@ main {
 }
 
 .text {
-  color: hsl(246, 10%, 61%);
+  color: hsl(28, 10%, 53%);
   font-size: 14px;
   font-weight: 400;
 }
@@ -57,7 +57,7 @@ main {
 
 .part3 {
   font-weight: 700;
-  color: hsl(0, 0%, 0%);
+  color: hsl(25, 47%, 15%);
 }
 
 .balance1 {
@@ -75,6 +75,7 @@ img {
 
 .header1 {
   text-align: left;
+  color: hsl(25, 47%, 15%);
   font-size: 16px;
 }
 
@@ -98,8 +99,21 @@ img {
   border-radius: 5px;
 }
 
-.barMax {
+.bar:hover::before {
+  content: attr(data-amount);
+}
+
+.bar:hover {
+  cursor: pointer;
+  background-color: #ff9b86;
+}
+
+.barCurrentDay {
   background-color: hsl(186, 34%, 60%);
+}
+
+.barCurrentDay:hover {
+  background-color: #b4e0e5;
 }
 
 .day {
@@ -126,6 +140,7 @@ hr {
 }
 
 .balance2 {
+  color: hsl(25, 47%, 15%);
   font-size: 28px;
   font-weight: 700;
 }

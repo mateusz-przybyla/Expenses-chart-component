@@ -4,7 +4,6 @@ async function fetchChartData(url) {
 
   createBars(chartData);
   calculateCurrentMonthBalance(chartData);
-  calculateTheHighestValue(chartData);
 }
 
 fetchChartData("./data.json");
@@ -14,7 +13,9 @@ function createBars(chartData) {
 
   for (var i = 0; i < chartData.length; i++) {
     content +=
-      '<div class="barBox"><div class="bar" style="height: ' +
+      '<div class="barBox"><div class="bar" data-amount=' +
+      chartData[i].amount +
+      ' style="height: ' +
       Math.ceil(chartData[i].amount * 2.85) +
       'px;"></div><p class="day">' +
       chartData[i].day +
@@ -22,6 +23,7 @@ function createBars(chartData) {
   }
 
   document.querySelector(".chartBox").innerHTML = content;
+  highlightCurrentDay();
 }
 
 function calculateCurrentMonthBalance(chartData) {
@@ -36,16 +38,9 @@ function calculateCurrentMonthBalance(chartData) {
   document.querySelector(".balance2").innerHTML = "$" + sum;
 }
 
-function calculateTheHighestValue(chartData) {
-  var max = chartData[0].amount;
-  var position = 0;
+function highlightCurrentDay() {
+  const weekDayIndex = (new Date().getDay() - 1 + 7) % 7;
 
-  for (var i = 0; i < chartData.length - 1; i++) {
-    if (chartData[i + 1].amount > max) {
-      max = chartData[i + 1].amount;
-      position = i + 1;
-    }
-  }
-
-  document.getElementsByClassName("bar")[position].classList.add("barMax");
+  var bars = document.getElementsByClassName("bar")[weekDayIndex];
+  bars.classList.add("barCurrentDay");
 }
