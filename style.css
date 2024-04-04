@@ -34,7 +34,7 @@ main {
 }
 
 .container2 {
-  background-color: hsl(0, 100%, 100%);
+  background-color: hsl(33, 100%, 98%);
   margin: 0 15px 15px 15px;
   border: 0;
   border-radius: 10px;
@@ -51,7 +51,7 @@ main {
 
 .part1 {
   text-align: left;
-  color: hsl(0, 100%, 100%);
+  color: hsl(33, 100%, 98%);
   padding-bottom: 7px;
 }
 
@@ -64,7 +64,7 @@ main {
   text-align: left;
   font-size: 24px;
   font-weight: 600;
-  color: hsl(0, 100%, 100%);
+  color: hsl(33, 100%, 98%);
 }
 
 img {
@@ -104,7 +104,7 @@ img {
   content: attr(data-amount);
   font-size: 12px;
   font-weight: 700;
-  color: hsl(0, 100%, 100%);
+  color: hsl(33, 100%, 98%);
   background-color: hsl(25, 47%, 15%);
   padding: 20% 4px 20% 4px;
   border-radius: 5px;
@@ -116,7 +116,7 @@ img {
 
 .bar:hover {
   cursor: pointer;
-  background-color: #ff9b86;
+  background-color: hsl(10, 100%, 76%);
 }
 
 .barCurrentDay {
@@ -124,18 +124,18 @@ img {
 }
 
 .barCurrentDay:hover {
-  background-color: #b4e0e5;
+  background-color: hsl(186, 49%, 80%);
 }
 
 .day {
-  color: hsl(246, 10%, 61%);
+  color: hsl(28, 10%, 53%);
   font-size: 12px;
   font-weight: 500;
   padding-top: 10px;
 }
 
 hr {
-  border: 1px solid hsl(240, 21%, 93%);
+  border: 1px solid hsl(27, 66%, 92%);
   margin: 25px 0 25px 0;
 }
 
