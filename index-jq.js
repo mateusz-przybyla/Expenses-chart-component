@@ -1,23 +1,21 @@
-$(document).ready(function () {
-  $.getJSON("data.json", function (chartData) {
-    for (var i = 0; i < chartData.length; i++) {
-      $(".chartBox").append(
-        '<div class="barBox"><div class="bar" data-amount=' +
-          "$" +
-          chartData[i].amount +
-          ' style="height: ' +
-          Math.ceil(chartData[i].amount * 2.85) +
-          'px;"></div><p class="day">' +
-          chartData[i].day +
-          "</p></div>"
-      );
-    }
-    calculateCurrentMonthBalance(chartData);
-    highlightCurrentDay();
-  }).fail(function (jqxhr, textStatus, error) {
-    var err = textStatus + ", " + error;
-    console.log("Request Failed: " + err);
-  });
+$.getJSON("data.json", function (chartData) {
+  for (var i = 0; i < chartData.length; i++) {
+    $(".chartBox").append(
+      '<div class="barBox"><div class="bar" data-amount=' +
+        "$" +
+        chartData[i].amount +
+        ' style="height: ' +
+        Math.ceil(chartData[i].amount * 2.85) +
+        'px;"></div><p class="day">' +
+        chartData[i].day +
+        "</p></div>"
+    );
+  }
+  calculateCurrentMonthBalance(chartData);
+  highlightCurrentDay();
+}).fail(function (jqxhr, textStatus, error) {
+  var err = textStatus + ", " + error;
+  console.log("Request Failed: " + err);
 });
 
 function calculateCurrentMonthBalance(chartData) {
