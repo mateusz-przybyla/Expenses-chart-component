@@ -34,5 +34,5 @@ function highlightCurrentDay() {
   const weekDayIndex = (new Date().getDay() - 1 + 7) % 7;
 
   var bars = document.getElementsByClassName("bar")[weekDayIndex];
-  bars.classList.add("barCurrentDay");
+  $(bars).addClass("barCurrentDay");
 }
